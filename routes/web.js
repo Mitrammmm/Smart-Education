@@ -19,7 +19,7 @@ router.post('/forgotPassword' , FrontController.forgetPasswordVerify)
 router.get('/reset-password',FrontController.resetPassword)
 router.post('/reset_Password1',FrontController.reset_Password1)
 
-router.get('/profile',checkUserAuth ,FrontController.profile)
+router.get('/profile',FrontController.profile) //checkuserAuth removed
 router.post('/updateProfile',checkUserAuth ,FrontController.updateProfile)
 router.post('/changePassword',checkUserAuth ,FrontController.changePassword)
 
