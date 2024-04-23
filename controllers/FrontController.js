@@ -20,6 +20,27 @@ class FrontController {
             console.log(err);
         }
     }
+    static login = async (req, res) => {
+        try {
+            res.render('login')
+        }catch(err){
+            console.log(err);
+        }
+    }
+    static register = async (req, res) => {
+        try {
+            res.render('register')
+        }catch(err){
+            console.log(err);
+        }
+    }
+    static description = async (req, res) => {
+        try {
+            res.render('description')
+        }catch(err){
+            console.log(err);
+        }
+    }
     static contact = async (req, res) => {
         try {
             res.render('contact')

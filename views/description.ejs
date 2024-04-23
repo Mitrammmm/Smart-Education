@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Topic Detail Page</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="/css/templatemo-topic-listing.css" rel="stylesheet">
+
+    <style>
+        /* Interview Section */
+        .interview-section {
+            background-color: #f8f9fa;
+            /* Set background color */
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .interview-section h3 {
+            color: #333;
+            /* Set heading color */
+        }
+
+        /* Accordion */
+        .accordion-item {
+            margin-bottom: 20px;
+        }
+
+        .accordion-button {
+            background-color: #fff;
+            /* Set accordion button background color */
+            color: #333;
+            /* Set accordion button text color */
+            border: none;
+            text-align: left;
+            width: 100%;
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-button:hover {
+            background-color: #f0f0f0;
+            /* Set hover background color */
+        }
+
+        .accordion-body {
+            background-color: #fff;
+            /* Set accordion body background color */
+            color: #555;
+            /* Set accordion body text color */
+            padding: 15px;
+            border: 1px solid #ddd;
+            /* Set border color */
+            border-top: none;
+        }
+
+        /* Downloads Section */
+        .downloads-section {
+            background-color: #f8f9fa;
+            /* Set background color */
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .downloads-section h4 {
+            color: #333;
+            /* Set heading color */
+        }
+    </style>
+
+</head>
+
+<body id="top">
+
+    <main>
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <i class="bi-back"></i>
+                    <span>Topic</span>
+                </a>
+
+                <div class="d-lg-none ms-auto me-4">
+                    <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/#section_1">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/#section_2">Browse Topics</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/#section_3">How it works</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/#section_4">FAQs</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/#section_5">Contact</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li><a class="dropdown-item" href="/topicListing">Topics Listing</a></li>
+
+                                <li><a class="dropdown-item" href="/contact">Contact Form</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="d-none d-lg-block">
+                        <div class="dropdown">
+
+                            <a class="navbar-icon bi-person smoothscroll" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                    
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">Sign In</a>
+                                <a class="dropdown-item" href="#">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- must not remove -->
+        <header class="site-header d-flex flex-column justify-content-center align-items-center">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+
+                    <div class="col-lg-5 col-12 mb-5">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/">Homepage</a></li>
+
+                                <li class="breadcrumb-item active" aria-current="page">Web Design</li>
+                            </ol>
+                        </nav>
+
+                        <h2 class="text-white">Introduction to <br> Web Design 101</h2>
+
+                        <div class="d-flex align-items-center mt-5">
+                            <a href="#topics-detail" class="btn custom-btn custom-border-btn smoothscroll me-4">Read
+                                More</a>
+
+                            <a href="#top" class="custom-icon bi-bookmark smoothscroll"></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-12">
+                        <div class="topics-detail-block bg-white shadow-lg">
+                            <img src="images/topics/undraw_Remote_design_team_re_urdx.png"
+                                class="topics-detail-block-image img-fluid">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <!-- Description Section!!!! -->
+        <section class="topics-detail-section section-padding" id="topics-detail">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 m-auto">
+                        <h3 class="mb-4">Introduction to Web Design</h3>
+
+                        <p>Web designing is the process of creating and arranging the visual elements of a website,
+                            focusing on both the aesthetics
+                            and functionality. </p>
+                        <p><strong>including graphic design, user interface (UI) design, user
+                                experience (UX) design, and front-end development</strong>...</p>
+
+                        <!-- <blockquote>
+                                Freelancing your skills isn’t going to make you a millionaire overnight.
+                            </blockquote> -->
+
+                        <div class="row my-4">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <img src="https://images.pexels.com/photos/326502/pexels-photo-326502.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                    class="topics-detail-block-image img-fluid">
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12 mt-4 mt-lg-0 mt-md-0">
+                                <img src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                    class="topics-detail-block-image img-fluid">
+                            </div>
+                        </div>
+
+                        <p>Discover the art of shaping digital experiences with web designing. From captivating visuals
+                            to
+                            seamless functionality, unlock the power to craft stunning websites that leave a lasting
+                            impression. Dive into a world where creativity meets technology and unleash your potential
+                            to create the online world of tomorrow</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Interview que section -->
+        <section class="interview-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-12 m-auto">
+                        <h3 class="mb-4">Interview Questions</h3>
+                        <!-- Add interview questions content here -->
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        What are the key principles of web design?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        The key principles of web design include visual hierarchy, navigation,
+                                        typography, color theory, and usability. These principles ensure that websites
+                                        are aesthetically pleasing, user-friendly, and effective in conveying
+                                        information.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        What tools are commonly used in web design?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Commonly used tools in web design include graphic design software like Adobe
+                                        Photoshop and Illustrator, wireframing and prototyping tools like Sketch and
+                                        Adobe XD, and coding tools like Sublime Text and Visual Studio Code.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        How do you optimize a website for performance?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Website performance can be optimized by minifying and compressing files,
+                                        optimizing images, leveraging browser caching, using a content delivery network
+                                        (CDN), and reducing server response time.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
+                                        What is responsive web design?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Responsive web design is an approach to designing and coding websites that
+                                        ensure optimal viewing and interaction experiences across a wide range of
+                                        devices and screen sizes, from desktop computers to mobile phones.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- NOTES & project download section -->
+        <section class="downloads-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <h4 class="mb-4">Notes Download</h4>
+                        <!-- notes -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="images/pdf.jpg" style="height: 120px; width: 120px;"
+                                            class="card-img-right" alt="Logo">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5 class="card-title">MERN STACK</h5>
+                                        <p class="card-text">By Mitra 2nd year CSE student</p>
+                                        <a href="https://drive.google.com/file/d/1ifFKfZ-XhaqA_caxQ2RV3MIubk2m1kq1/view?usp=sharing"
+                                            class="btn btn-primary" target="_blank">Download</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="images/pdf.jpg" style="height: 120px; width: 120px;"
+                                            class="card-img-right" alt="Logo">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5 class="card-title">React Notes</h5>
+                                        <p class="card-text">By Mitra 2nd year CSE student</p>
+                                        <a href="https://drive.google.com/file/d/1ifFKfZ-XhaqA_caxQ2RV3MIubk2m1kq1/view?usp=sharing"
+                                            class="btn btn-primary" target="_blank">Download</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <h4 class="mb-4">Projects Download</h4>
+                        <!-- Projects -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="images/github.jpg" style="height: 120px; width: 120px;"
+                                            class="card-img-right" alt="Logo">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5 class="card-title">JAVASCRIPT Challenge</h5>
+                                        <p class="card-text">By Mitra 2nd year CSE student</p>
+                                        <a href="https://github.com/Mitrammmm/JavaScript-Challenge"
+                                            class="btn btn-primary" target="_blank">GITHUB</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Projects -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="images/github.jpg" style="height: 120px; width: 120px;"
+                                            class="card-img-right" alt="Logo">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h5 class="card-title">ADMISSION PORTAL</h5>
+                                        <p class="card-text">By Mitra 2nd year CSE student</p>
+                                        <a href="https://github.com/Mitrammmm/Kiko-Arts-School"
+                                            class="btn btn-primary" target="_blank">GITHUB</a>
+                                        <a href="" class="btn btn-success" target="_blank">Live</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 col-12 mb-4 pb-2">
+                    <a class="navbar-brand mb-2" href="/">
+                        <i class="bi-back"></i>
+                        <span>Topic</span>
+                    </a>
+
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <h6 class="site-footer-title mb-3">Resources</h6>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Home</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">How it works</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">FAQs</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                    <h6 class="site-footer-title mb-3">Information</h6>
+
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel: 305-240-9671" class="site-footer-link">
+                            305-240-xxxx
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <a href="mailto:info@company.com" class="site-footer-link">
+                            collablab2243@gmail.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            English</button>
+
+                        <ul class="dropdown-menu">
+                            <li><button class="dropdown-item" type="button">Hindi</button></li>
+                            <li><button class="dropdown-item" type="button">Tamil</button></li>
+                        </ul>
+                    </div>
+
+                    <!-- <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Topic Listing Center. All rights reserved.
+                        <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a></p> -->
+
+                </div>
+                <p class="copyright-text mt-lg-5 mt-4">Copyright ©2024 All rights reserved.
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>
