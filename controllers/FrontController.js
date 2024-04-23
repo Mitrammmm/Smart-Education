@@ -20,6 +20,13 @@ class FrontController {
             console.log(err);
         }
     }
+    static description = async (req, res) => {
+        try {
+            res.render('description')
+        }catch(err){
+            console.log(err);
+        }
+    }
     static contact = async (req, res) => {
         try {
             res.render('contact')

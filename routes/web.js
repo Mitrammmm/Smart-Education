@@ -5,6 +5,7 @@ const FrontController = require('../controllers/FrontController');
 const ContactController = require('../controllers/ContactController');
 
 router.get('/' , FrontController.home)
+router.get('/description' , FrontController.description)
 router.get('/contact' , FrontController.contact)
 router.get('/messaging' , FrontController.messaging)
 
