@@ -31,7 +31,7 @@ class ContactController {
 
             auth: {
                 user: "collablab2243@gmail.com",
-                pass: "mkbztxzzuczdrkpq"//To be changed
+                pass: "obdojrysnnojlkyu"
             },
         });
         let info = await transporter.sendMail({

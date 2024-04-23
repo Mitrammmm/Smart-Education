@@ -5,6 +5,9 @@ const FrontController = require('../controllers/FrontController');
 const ContactController = require('../controllers/ContactController');
 
 router.get('/' , FrontController.home)
+router.get('/contact' , FrontController.contact)
+router.get('/messaging' , FrontController.messaging)
+
 router.post('/userinsert', FrontController.userinsert)
 router.post('/verifyLogin', FrontController.verifyLogin)
 router.get('/logOut',FrontController.logOut)

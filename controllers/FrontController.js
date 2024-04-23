@@ -20,6 +20,20 @@ class FrontController {
             console.log(err);
         }
     }
+    static contact = async (req, res) => {
+        try {
+            res.render('contact')
+        }catch(err){
+            console.log(err);
+        }
+    }
+    static messaging = async (req, res) => {
+        try {
+            res.render('messaging')
+        }catch(err){
+            console.log(err);
+        }
+    }
     static userinsert = async (req, res) => {
         try {
             let imageUpload = null; // Set default value for image upload
@@ -183,7 +197,7 @@ class FrontController {
     
           auth: {
             user: "collablab2243@gmail.com",
-            pass: "mkbztxzzuczdrkpq",//To be Changed
+            pass: "obdojrysnnojlkyu"
           },
         });
         let info = await transporter.sendMail({
