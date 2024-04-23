@@ -77,7 +77,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="/messaging">Ask for Help</a>
+                        <a class="nav-link click-scroll" href="/messaging">Live Chat</a>
                     </li>
 
                 </ul>
@@ -100,45 +100,28 @@
     
     <section class="section-padding communication-window">
         <div class="messages">
-            <div class="message">
-                <p class="message-author">User789:</p>
-                <img src="images/doubt.jpg" alt="Sample Image" class="message-image" style="height: 300px; width: 60%;">
-                <p class="message-content">why is it not working?</p>
-            </div>
-            <div class="message">
-                <p class="message-author">User123:</p>
-                <p class="message-content">u haven't used "&" in line 5</p>
-            </div>
-            <div class="message">
-                <p class="message-author">User456:</p>
-                <p class="message-content">+1</p>
-            </div>
-            <div class="message">
-                <p class="message-author">User456:</p>
-                <p class="message-content">+1</p>
-            </div>
-            <div class="message">
-                <p class="message-author">User456:</p>
-                <p class="message-content">+1</p>
-            </div>
-            <div class="message">
-                <p class="message-author">User456:</p>
-                <p class="message-content">+1</p>
-            </div>
-            <div class="message">
-                <p class="message-author">User456:</p>
-                <p class="message-content">+1</p>
-            </div>
-            <!-- More messages can be added here -->
-            
+          <% d.forEach(doubt => { %>
+          <div class="message">
+            <p class="message-author"><%= doubt.author %>:</p>
+            <p class="message-content"><%= doubt.title %></p>
+            <% if (doubt.image.url) { %>
+            <img src="<%= doubt.image.url %>" alt="Doubt Image" class="message-image" style="height: 200px; width: 40%;">
+            <% } %>
+            <p class="message-content"><%= doubt.description %></p>
+          </div>
+          <% }); %>
         </div>
-    
+      
         <h4>Write your message/doubts here:</h4>
-        <textarea class="message-box" placeholder="Type your message here..."></textarea>
-        <button class="send-button">Send</button>
-        <input type="file" id="image-upload" accept="image/*">
-        <button class="upload-button">Upload Image</button>
-    </section>
+        <form action="/addDoubt" method="post" enctype="multipart/form-data">
+          <input type="text" name="title" placeholder="Title" required>
+          <textarea name="description" placeholder="Type your message here..." class="message-box" required></textarea>
+          <input type="file" name="image" accept="image/*">
+          <input type="text" name="author" placeholder="Author's Name" required>
+          <button type="submit" class="send-button">Send</button>
+        </form>
+      </section>
+      
     
 </main>
 
