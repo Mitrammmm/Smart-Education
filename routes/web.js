@@ -13,7 +13,11 @@ router.post('/forgotPassword' , FrontController.forgetPasswordVerify)
 router.get('/reset-password',FrontController.resetPassword)
 router.post('/reset_Password1',FrontController.reset_Password1)
 
+router.get('/profile',checkUserAuth ,FrontController.profile)
+router.post('/updateProfile',checkUserAuth ,FrontController.updateProfile)
+router.post('/changePassword',checkUserAuth ,FrontController.changePassword)
+
 router.post('/contactUs',ContactController.contactUs)
-// route.post('/contactUs/:id',checkUserAuth ,ContactController.contactUs)
+// router.post('/contactUs/:id',checkUserAuth ,ContactController.contactUs)
 
 module.exports = router;
