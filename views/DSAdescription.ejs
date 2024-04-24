@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Data Structures and Algorithms Detail Page</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        /* Interview Section */
+        .interview-section {
+            background-color: #f8f9fa;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .interview-section h3 {
+            color: #333;
+        }
+
+        /* Accordion */
+        .accordion-item {
+            margin-bottom: 20px;
+        }
+
+        .accordion-button {
+            background-color: #fff;
+            color: #333;
+            border: none;
+            text-align: left;
+            width: 100%;
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .accordion-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .accordion-body {
+            background-color: #fff;
+            color: #555;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-top: none;
+        }
+
+        /* Downloads Section */
+        .downloads-section {
+            background-color: #f8f9fa;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .downloads-section h4 {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body id="top">
+    <main>
+        <!-- NAVNAR -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <!-- logoname/icon/link to it -->
+                <a href="" class="navbar-brand logo">
+                    <img src="images/logo.jpg" alt="" width="20%">
+                </a>
+
+                <div class="d-lg-none ms-auto me-4">
+                    <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/#section_1">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/#section_2">Browse Topics</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/#section_3">How it works</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/#section_4">FAQs</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/#section_5">Contact</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li><a class="dropdown-item" href="/topicListing">Topics Listing</a></li>
+
+                                <li><a class="dropdown-item" href="/contact">Contact Form</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/messaging">Live Chat</a>
+                        </li>
+
+                    </ul>
+
+                    <div class="d-none d-lg-block">
+                        <div class="dropdown">
+
+                            <a class="navbar-icon bi-person smoothscroll" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                    
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="/profile">Profile</a>
+                                <a class="dropdown-item" href="/login">Login</a>
+                                <a class="dropdown-item" href="/register">Register</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- must not remove -->
+        <header class="site-header d-flex flex-column justify-content-center align-items-center">
+            <div class="container">
+                <div class="row justify-content-center align-items-center">
+
+                    <div class="col-lg-5 col-12 mb-5">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/">Homepage</a></li>
+
+                                <li class="breadcrumb-item active" aria-current="page">DATA STRUCTURE & ALGORITHM</li>
+                            </ol>
+                        </nav>
+
+                        <h2 class="text-white">Introduction to <br> DSA</h2>
+
+                        <div class="d-flex align-items-center mt-5">
+                            <a target="_blank" href="https://www.geeksforgeeks.org/web-design/" class="btn custom-btn custom-border-btn smoothscroll me-4">Read
+                                More</a>
+
+                            <!-- <a href="#top" class="custom-icon bi-bookmark smoothscroll"></a> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-12">
+                        <div class="topics-detail-block bg-white shadow-lg">
+                            <img src="images/dsa.jpg"
+                                class="topics-detail-block-image img-fluid">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <!-- Description Section -->
+        <section class="topics-detail-section section-padding" id="topics-detail">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-12 m-auto">
+                        <h3 class="mb-4">Introduction to Data Structures and Algorithms</h3>
+                        <p>Data structures and algorithms are fundamental concepts in computer science that involve organizing
+                            and processing data efficiently.</p>
+                        <!-- Additional content -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interview Question Section -->
+        <div class="container">
+            <h2 class="text-center mb-5">Interview Questions</h2>
+            <div class="row bg-light">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <section class="interview-section section-padding">
+                        <h3>Data Structures Interview Questions</h3>
+                        <div class="accordion" id="accordionDataStructures">
+                            <!-- Data Structures Interview Questions -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="dsQuestion1">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#dsAnswer1" aria-expanded="true" aria-controls="dsAnswer1">
+                                        Question 1: What is a linked list?
+                                    </button>
+                                </h2>
+                                <div id="dsAnswer1" class="accordion-collapse collapse show"
+                                    aria-labelledby="dsQuestion1" data-bs-parent="#accordionDataStructures">
+                                    <div class="accordion-body">
+                                        Answer 1: A linked list is a linear data structure where elements are
+                                        stored in a sequence, and each element points to the next one using
+                                        pointers.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add more questions here -->
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <section class="interview-section section-padding">
+                        <h3>Algorithms Interview Questions</h3>
+                        <div class="accordion" id="accordionAlgorithms">
+                            <!-- Algorithms Interview Questions -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="algQuestion1">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#algAnswer1" aria-expanded="false" aria-controls="algAnswer1">
+                                        Question 1: What is a sorting algorithm?
+                                    </button>
+                                </h2>
+                                <div id="algAnswer1" class="accordion-collapse collapse"
+                                    aria-labelledby="algQuestion1" data-bs-parent="#accordionAlgorithms">
+                                    <div class="accordion-body">
+                                        Answer 1: A sorting algorithm is an algorithm that arranges elements in a
+                                        specific order, such as ascending or descending order.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add more questions here -->
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button to Add Resource -->
+        <center>
+            <button type="button" class="btn btn-primary text-light" data-bs-toggle="modal"
+            data-bs-target="#resource">Add a Resource</button>
+        </center>
+
+        <!-- Downloads Section -->
+        <section class="downloads-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <h4 class="mb-4">Notes Download</h4>
+                        <!-- Notes for Data Structures and Algorithms -->
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <h4 class="mb-4">View Projects</h4>
+                        <!-- Projects related to Data Structures and Algorithms -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Last Description Section -->
+        <section class="description-section section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-12 m-auto text-center">
+                        <h2 class="mb-4">Why Data Structures and Algorithms Matter</h2>
+                        <blockquote class="mx-auto" style="max-width: 80%;">
+                            <p>Data structures and algorithms form the backbone of computer science, enabling efficient
+                                problem-solving and software development.</p>
+                            <p>Understanding these concepts is essential for building robust and scalable software
+                                applications that meet real-world needs.</p>
+                            <div class="text-center mt-5">
+                                <a href="https://www.geeksforgeeks.org/data-structures/" class="btn custom-btn custom-border-btn smoothscroll me-4">Read
+                                    More</a>
+                            </div>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Resource Modal -->
+    <!-- Your resource modal code here -->
+
+    <%-include('./footer.ejs')%>
+
