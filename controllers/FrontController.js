@@ -59,6 +59,13 @@ class FrontController {
             console.log(err);
         }
     }
+    static topicListing = async (req, res) => {
+        try {
+            res.render('topicListing')
+        }catch(err){
+            console.log(err);
+        }
+    }
     static userinsert = async (req, res) => {
         try {
             let imageUpload = null; // Set default value for image upload
@@ -240,9 +247,9 @@ class FrontController {
     }
     static profile = async (req, res) => {
         try{
-            // const {name,image,email,id,role} = req.userData;
-            // res.render('profile',{n:name , i:image , e:email , id:id , r:role , message:req.flash('success'),msg:req.flash('error')});
-            res.render('profile')
+            // const {name,image,email,id} = req.userData;
+            // res.render('profile',{n:name , i:image , e:email , id:id, message:req.flash('success'),msg:req.flash('error')});
+            res.render('profile' ,{n:name , i:image , e:email , id:id, message:req.flash('success'),msg:req.flash('error')})
         }catch(err){
             console.log(err);
         }
@@ -254,31 +261,9 @@ class FrontController {
             // console.log(req.files.image)
             const { id } = req.userData
             const {name,email} =req.body
-            if (req.files) {
-                const user = await UserModel.findById(id)
-                const imageID = user.image.public_id
-                // console.log(imageID)
-
-                //deleting image from Cloudinary
-                await cloudinary.uploader.destroy(imageID)
-                //new image update
-                const imagefile = req.files.image
-                const imageupload = await cloudinary.uploader.upload(imagefile.tempFilePath, {
-                    folder: 'userProfile'
-                })
-                var data = {
-                    name: name,
-                    email: email,
-                    image: {
-                        public_id: imageupload.public_id,
-                        url: imageupload.secure_url
-                    }
-                }
-            } else {
-                var data = {
-                    name: name,
-                    email: email
-                }
+            var data = {
+                name: name,
+                email: email
             }
             await UserModel.findByIdAndUpdate(id, data)
             req.flash('success', "Profile Updated successfully")
@@ -309,13 +294,42 @@ class FrontController {
                             password: newHashPassword
                         })
                         req.flash('success', 'Password Updated successfully ')
-                        res.redirect('/')
+                        res.redirect('/profile')
                     }
                 }
             } else {
                 req.flash('error', 'All fields are required')
                 res.redirect('/profile')
             }
+        }catch(err){
+            console.log(err);
+        }
+    }
+    static updateImage = async (req, res) => {
+        try{
+            const { id } = req.userData
+            if (req.files) {
+                const user = await UserModel.findById(id)
+                const imageID = user.image.public_id
+                // console.log(imageID)
+
+                //deleting image from Cloudinary
+                await cloudinary.uploader.destroy(imageID)
+                //new image update
+                const imagefile = req.files.image
+                const imageupload = await cloudinary.uploader.upload(imagefile.tempFilePath, {
+                    folder: 'collabLab'
+                })
+                var data = {
+                    image: {
+                        public_id: imageupload.public_id,
+                        url: imageupload.secure_url
+                    }
+                }
+            }
+            await UserModel.findByIdAndUpdate(id, data)
+            req.flash('success', "Profile Updated successfully")
+            res.redirect('/profile')
         }catch(err){
             console.log(err);
         }

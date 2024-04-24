@@ -1,11 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>CollabLab</title>
+
+    <!-- CSS FILES -->        
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+                    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <!-- <link href="css/templatemo-topic-listing.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/profile.css">
 </head>
-<body>
-    <h1>Profile</h1>
+    
+<body id="top" >
+<main>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg " style="background-color: #80d0c7;">
+        <div class="container">
+            <!-- logoname/icon/link to it -->
+            <a class="navbar-brand" href="/">
+                <i class="bi-back"></i>
+                <span>CollabLab</span>    
+            </a>
+
+            <div class="d-lg-none ms-auto me-4">
+                <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/#section_1">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/#section_2">Browse Topics</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/#section_3">How it works</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/#section_4">FAQs</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/#section_5">Contact</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                            <li><a class="dropdown-item" href="topics-listing.html">Topics Listing</a></li>
+
+                            <li><a class="dropdown-item" href="/contact">Contact Form</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/messaging">Ask for Help</a>
+                    </li>
+
+                </ul>
+
+                <div class="d-none d-lg-block">
+                    <div class="dropdown">
+
+                        <a class="navbar-icon bi-person smoothscroll" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="/profile">Profile</a>
+                            <a class="dropdown-item" href="/login">Login</a>
+                            <a class="dropdown-item" href="/register">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+<body style="background-color: #465a6c;">
+    <header>
+        <h1>Profile</h1>
+    </header>
+    <main>
+        <div class="profile-container">
+            <% if(message.length > 0){ %>
+                <div class="alert alert-success">
+                    <!-- To Print -->
+                    <%= message %>
+                </div>
+            <% } %>
+            <% if(msg.length > 0){ %>
+                <div class="alert alert-danger">
+                    <!-- To Print -->
+                    <%= msg %>
+                </div>
+            <% } %>
+            <div class="profile-picture">
+                <img src="<%= i.url %>" alt="Profile Picture">
+                <button onclick="openModal('edit-picture-modal')">Edit Picture</button>
+            </div>
+            <div class="profile-details">
+                <h2>Name: <%= n %></h2>
+                <h2>Email: <%= e %></h2>
+                <!-- <h2>About:</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit aliquam nunc id porta. Sed tristique mi ut tortor dignissim, vel fermentum magna malesuada.</p> -->
+                <button onclick="openModal('edit-profile-modal')">Edit Profile</button>
+                <button onclick="openModal('change-password-modal')">Change Password</button>
+            </div>
+        </div>
+    </main>
+    <%-include('./footer.ejs')%>
+
+    <!-- Edit Picture Modal -->
+    <div id="edit-picture-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('edit-picture-modal')">&times;</span>
+            <h2>Edit Picture</h2>
+            <form action="/updateImage" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="">Image</label>
+                    <input type="file" name="image" class="form-control">
+                    <img src="<%= i.url %>" alt="profile-image" width="50px">
+                </div>
+                <button type="submit" class="btn btn-success">Update Profile</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="edit-profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('edit-profile-modal')">&times;</span>
+            <h2>Edit Profile</h2>
+            <form action="/updateProfile" method="post" enctype="multipart/form-data">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="<%= n %>">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="<%= e %>">
+                <!-- <label for="about">About:</label>
+                <textarea id="about" name="about" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit aliquam nunc id porta. Sed tristique mi ut tortor dignissim, vel fermentum magna malesuada."></textarea> -->
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div id="change-password-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('change-password-modal')">&times;</span>
+            <h2>Change Password</h2>
+            <form action="/changePassword" method="post">
+                <label for="old-password">Old Password:</label>
+                <input type="password" id="old-password" name="op">
+                <label for="new-password">New Password:</label>
+                <input type="password" id="new-password" name="np">
+                <label for="confirm-password">Confirm New Password:</label>
+                <input type="password" id="confirm-password" name="cp">
+                <button type="submit">Change Password</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+        }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            var modals = document.getElementsByClassName("modal");
+            for (var i = 0; i < modals.length; i++) {
+                var modal = modals[i];
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
