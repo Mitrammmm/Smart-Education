@@ -23,19 +23,19 @@
 <body id="top" >
 <main>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg " style="background-color: #80d0c7;">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <!-- logoname/icon/link to it -->
-            <a class="navbar-brand" href="/">
-                <i class="bi-back"></i>
-                <span>CollabLab</span>    
+            <a href="" class="navbar-brand logo">
+                <img src="images/logo.jpg" alt="" width="20%">
             </a>
 
             <div class="d-lg-none ms-auto me-4">
                 <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
             </div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -62,17 +62,18 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
 
                         <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                            <li><a class="dropdown-item" href="topics-listing.html">Topics Listing</a></li>
+                            <li><a class="dropdown-item" href="/topicListing">Topics Listing</a></li>
 
                             <li><a class="dropdown-item" href="/contact">Contact Form</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link click-scroll" href="/messaging">Ask for Help</a>
+                        <a class="nav-link click-scroll" href="/messaging">Live Chat</a>
                     </li>
 
                 </ul>
@@ -94,12 +95,14 @@
         </div>
     </nav>
     
-<body style="background-color: #465a6c;" class="mt-5">
-    <header>
-        <h1>Profile</h1>
-    </header>
+<body class="mt-5">
     <main>
-        <div class="profile-container">
+        <div class="profile-heading">
+            <center>
+            <h1>Profile</h1>
+            </center>
+        </div>
+        <div class="profile-container bg-radius section-padding shadow-lg">
             <% if(message.length > 0){ %>
                 <div class="alert alert-success">
                     <!-- To Print -->
@@ -114,18 +117,20 @@
             <% } %>
             <div class="profile-picture">
                 <img src="<%= i.url %>" alt="Profile Picture">
-                <button onclick="openModal('edit-picture-modal')">Edit Picture</button>
+                <br>
+                <button onclick="openModal('edit-picture-modal') " class="btn btn-warning rounded pl-4 edit-profile-btn">Edit Picture</button>
             </div>
-            <div class="profile-details">
-                <h2>Name: <%= n %></h2>
-                <h2>Email: <%= e %></h2>
+            <div class="profile-details shadow-lg ">
+                <h3>Name: <%= n %></h3>
+                <h3>Email: <%= e %></h3>
                 <!-- <h2>About:</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed blandit aliquam nunc id porta. Sed tristique mi ut tortor dignissim, vel fermentum magna malesuada.</p> -->
-                <button onclick="openModal('edit-profile-modal')">Edit Profile</button>
-                <button onclick="openModal('change-password-modal')">Change Password</button>
+                <button onclick="openModal('edit-profile-modal')" class="btn btn-info">Edit Profile</button>
+                <button onclick="openModal('change-password-modal')" class="btn btn-success">Change Password</button>
             </div>
         </div>
     </main>
+    <hr>
     <%-include('./footer.ejs')%>
 
     <!-- Edit Picture Modal -->
