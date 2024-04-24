@@ -44,6 +44,25 @@ class FrontController {
             console.log(err);
         }
     }
+    // by mitra
+    static DSAdescription = async (req, res) => {
+        try {
+            const resource = await ResourceModel.find();
+            res.render('DSAdescription', {r: resource})
+        }catch(err){
+            console.log(err);
+        }
+    }
+    static MLdescription = async (req, res) => {
+        try {
+            const resource = await ResourceModel.find();
+            res.render('MLdescription', {r: resource})
+        }catch(err){
+            console.log(err);
+        }
+    }
+
+
     static contact = async (req, res) => {
         try {
             res.render('contact')
