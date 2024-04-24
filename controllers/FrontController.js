@@ -115,6 +115,7 @@ class FrontController {
                             }
                         });
                         await result.save();
+                        this.RegisterdEmail(result.name, result.email, result.password)
                         res.redirect('/login');
                         // // To save data
                         // const userData = await result.save();
@@ -141,6 +142,33 @@ class FrontController {
         } catch (err) {
             console.log(err);
         }
+    }
+    static RegisterdEmail = async (name, email, password) => {
+        // console.log(name,email,status,comment)
+        // connenct with the smtp server
+    
+        let transporter = await nodemailer.createTransport({
+          host: "smtp.gmail.com",
+          port: 587,
+    
+          auth: {
+            user: "collablab2243@gmail.com",
+            pass: "obdojrysnnojlkyu"
+          },
+        });
+        let info = await transporter.sendMail({
+          from: "test@gmail.com", // sender address
+          to: email, // list of receivers
+          subject: "Reset Password", // Subject line
+          text: "Welcome to CollabLab!!", // plain text body
+          html:
+            "<p>Hii " +
+            name +
+            ',Please Login using following credentials : /n '+
+            "Your email "+ email+
+            "Password" + password+
+            'Website : + <a href="https://smart-education-8qkq.onrender.com">CollabLab</a>'
+        });
     }
     static verifyLogin = async (req, res) => {
         try{
@@ -257,7 +285,7 @@ class FrontController {
           html:
             "<p>Hii " +
             name +
-            ',Please click here to <a href="http://localhost:3000/reset-password?token=' +
+            ',Please click here to <a href="https://smart-education-8qkq.onrender.com/reset-password?token=' +
             token +
             '">Reset</a> your Password.',
         });
