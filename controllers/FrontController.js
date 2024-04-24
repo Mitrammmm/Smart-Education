@@ -18,7 +18,7 @@ class FrontController {
     static home = async (req, res) => {
         try {
             console.log('drift.api.showWelcomeMessage()')
-            res.render('home')
+            res.render('home',{message:req.flash('success'),msg:req.flash('error')})
         }catch(err){
             console.log(err);
         }
