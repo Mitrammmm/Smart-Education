@@ -24,14 +24,14 @@ class FrontController {
     }
     static login = async (req, res) => {
         try {
-            res.render('login')
+            res.render('login',{message:req.flash('success'),msg:req.flash('error')})
         }catch(err){
             console.log(err);
         }
     }
     static register = async (req, res) => {
         try {
-            res.render('register')
+            res.render('register',{message:req.flash('success'),msg:req.flash('error')})
         }catch(err){
             console.log(err);
         }
@@ -162,7 +162,7 @@ class FrontController {
                     }
                     //User login
                     else {
-                        res.redirect('/home')
+                        res.redirect('/')
                     }
 
                     // //Admin Login
@@ -202,7 +202,7 @@ class FrontController {
             );
             this.sendEmail(userData.name, userData.email, randomString);
             req.flash("success", "Check your mail to Reset your Password!");
-            res.redirect("/");
+            res.redirect("/login");
           } else {
             req.flash("error", "This is not a Registered Email , Please Register");
             res.redirect("/register");
@@ -233,7 +233,7 @@ class FrontController {
             token: "",
         });
         req.flash("success", "Reset Password Updated successfully ");
-        res.redirect("/");
+        res.redirect("/login");
         } catch (error) {
         console.log(error);
         }
@@ -266,9 +266,9 @@ class FrontController {
     }
     static profile = async (req, res) => {
         try{
-            // const {name,image,email,id} = req.userData;
-            // res.render('profile',{n:name , i:image , e:email , id:id, message:req.flash('success'),msg:req.flash('error')});
-            res.render('profile' ,{n:name , i:image , e:email , id:id, message:req.flash('success'),msg:req.flash('error')})
+            const {name,image,email,id} = req.userData;
+            res.render('profile',{n:name , i:image , e:email , id:id, message:req.flash('success'),msg:req.flash('error')});
+            // res.render('profile' ,{n:name , i:image , e:email , id:id, message:req.flash('success'),msg:req.flash('error')})
         }catch(err){
             console.log(err);
         }
