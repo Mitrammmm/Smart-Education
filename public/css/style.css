@@ -285,11 +285,17 @@
   }
   
   .navbar {
-    background: transparent;
+    background-color:  #000a3d;
     border-bottom: 1px solid rgba(128, 208, 199, 0.35);
     z-index: 9;
   }
-  
+  .logo img{
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 5px 5px 12px black;
+  }
+  .logo:hover{
+    transform: translateY(-3px);
+  }
   .navbar-brand,
   .navbar-brand:hover {
     font-size: var(--h3-font-size);
@@ -476,6 +482,19 @@
   
   .navbar-toggler .navbar-toggler-icon::after {
     top: 8px;
+  }
+  
+  .login-bg{
+    background-color: #59c670;
+  }
+  .login-image{
+    border-radius: 20px 20px 20px 20px;
+    width: 360px;
+    height: 330px;
+    margin: 90px;
+  }
+  .bglogin h1{
+    color: #ffffb3;
   }
   
   
