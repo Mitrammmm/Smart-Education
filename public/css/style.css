@@ -10,8 +10,8 @@
     --custom-btn-bg-hover-color:   #001fb5;
     --dark-color:                   #000000;
     --p-color:                      #717275;
-    --border-color:                 #7fffd4;
-    --link-hover-color:             #13547a;
+    --border-color:                 #59c670;
+    --link-hover-color:             #001fb5;
   
     --body-font-family:             'Open Sans', sans-serif;
     --title-font-family:            'Montserrat', sans-serif;
@@ -180,10 +180,12 @@
     font-weight: var(--font-weight-medium);
     padding: 15px 25px;
     transition: all 0.3s;
+   
   }
   
   .nav-tabs .nav-link:first-child {
     margin-right: 20px;
+   
   }
   
   .nav-tabs .nav-item.show .nav-link, 
@@ -192,6 +194,7 @@
   .nav-tabs .nav-link:hover {
     border-bottom-color: var(--primary-color);
     color: var(--primary-color);
+    background-color:var(--custom-btn-bg-color);
   }
   
   
@@ -328,7 +331,7 @@
   
   .navbar-nav .nav-link.active, 
   .navbar-nav .nav-link:hover {
-    color: var(--primary-color);
+    color: rgb(37, 78, 241);
   }
   
   .navbar .dropdown-menu {
@@ -496,6 +499,12 @@
   .bglogin h1{
     color: #ffffb3;
   }
+  .register-image{
+    margin: 50px 20px;
+    border-radius: 30px 30px 30px 30px;
+    height: 484px;
+}
+  
   
   
   /*---------------------------------------
@@ -535,6 +544,10 @@
     max-width: 150px;
   }
   
+  .text-style{
+    color: yellowgreen;
+    font-family: sans-serif;
+  }
   
   /*---------------------------------------
     TOPICS              
