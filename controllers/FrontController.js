@@ -17,7 +17,8 @@ cloudinary.config({
 class FrontController {
     static home = async (req, res) => {
         try {
-            res.render('home')
+            // console.log('drift.api.showWelcomeMessage()')
+            res.render('home',{message:req.flash('success'),msg:req.flash('error')})
         }catch(err){
             console.log(err);
         }
@@ -44,7 +45,6 @@ class FrontController {
             console.log(err);
         }
     }
-    // by mitra
     static DSAdescription = async (req, res) => {
         try {
             const resource = await ResourceModel.find();
@@ -61,8 +61,6 @@ class FrontController {
             console.log(err);
         }
     }
-
-
     static contact = async (req, res) => {
         try {
             res.render('contact')
@@ -117,7 +115,7 @@ class FrontController {
                             }
                         });
                         await result.save();
-                        res.redirect('/');
+                        res.redirect('/login');
                         // // To save data
                         // const userData = await result.save();
                         // if (userData) {
@@ -268,7 +266,6 @@ class FrontController {
         try{
             const {name,image,email,id} = req.userData;
             res.render('profile',{n:name , i:image , e:email , id:id, message:req.flash('success'),msg:req.flash('error')});
-            // res.render('profile' ,{n:name , i:image , e:email , id:id, message:req.flash('success'),msg:req.flash('error')})
         }catch(err){
             console.log(err);
         }

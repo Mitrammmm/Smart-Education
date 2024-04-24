@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (matchedSuggestion) {
                 // Open the EJS page based on the matched suggestion
-                window.location.href = `/ejs/${matchedSuggestion.replace(/ /g, '-').toLowerCase()}.ejs`;
+                window.location.href = `/${matchedSuggestion.replace(/ /g, '-').toLowerCase()}`;
             } else {
                 // If the keyword doesn't match any suggestion, you can handle it here
                 console.log('Keyword does not match any suggestion.');

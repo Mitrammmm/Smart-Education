@@ -9,17 +9,13 @@ const ChatController = require('../controllers/ChatController');
 router.get('/' , FrontController.home)
 router.get('/login' , FrontController.login)
 router.get('/register' , FrontController.register)
+
 router.get('/description' , FrontController.description)
-//by mitra
 router.get('/DSAdescription' , FrontController.DSAdescription)
 router.get('/MLdescription' , FrontController.MLdescription);
-router.get('/ejs/web-design.ejs' , FrontController.description);
-router.get('/ejs/data-structures-&-algorithms.ejs' , FrontController.DSAdescription);
-router.get('/ejs/machine-learning.ejs' , FrontController.MLdescription);
-
-
-
-
+router.get('/web-design' , FrontController.description);
+router.get('/data-structures-&-algorithms' , FrontController.DSAdescription);
+router.get('/machine-learning' , FrontController.MLdescription);
 
 router.get('/contact' , FrontController.contact)
 router.get('/topicListing' , FrontController.topicListing)

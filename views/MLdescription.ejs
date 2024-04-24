@@ -232,17 +232,67 @@
                 data-bs-target="#resource">Add a Resource</button>
         </center>
 
-        <!-- Downloads Section -->
         <section class="downloads-section section-padding">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-12">
                         <h4 class="mb-4">Notes Download</h4>
-                        <!-- Notes for Machine Learning -->
+                        <!-- notes -->
+                        <% r.forEach(resource=> { %>
+                            <% if (resource.category=='notes' ) {%>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <img src="images/pdf.jpg" style="height: 120px; width: 120px;"
+                                                    class="card-img-right" alt="Logo">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <h5 class="card-title">
+                                                    <%= resource.title %>
+                                                </h5>
+                                                <p class="card-text">
+                                                    <%= resource.description %>
+                                                </p>
+                                                <a href="<%= resource.link %>" class="btn btn-primary"
+                                                    target="_blank">Download</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% }%>
+                        <% }); %>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
                         <h4 class="mb-4">View Projects</h4>
-                        <!-- Projects related to Machine Learning -->
+                        <!-- Projects -->
+                        <% r.forEach(resource=> { %>
+                            <% if(resource.category=='project' ) { %>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <img src="images/github.jpg" style="height: 120px; width: 120px;"
+                                                    class="card-img-right" alt="Logo">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <h5 class="card-title">
+                                                    <%= resource.title %>
+                                                </h5>
+                                                <p class="card-text">
+                                                    <%= resource.description %>
+                                                </p>
+                                                <a href="<%= resource.link %>" class="btn btn-primary"
+                                                    target="_blank">GITHUB</a>
+                                                <!-- <% if (resource.liveLink) { %>
+                                    <a href="<%= resource.liveLink %>" class="btn btn-success" target="_blank">Live</a>
+                                    <% } %> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% } %>
+                        <% }); %>
                     </div>
                 </div>
             </div>
