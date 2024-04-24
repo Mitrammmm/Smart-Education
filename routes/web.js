@@ -10,6 +10,8 @@ router.get('/' , FrontController.home)
 router.get('/login' , FrontController.login)
 router.get('/register' , FrontController.register)
 router.get('/description' , FrontController.description)
+router.get('/DSAdescription' , FrontController.DSAdescription)
+router.get('/MLdescription' , FrontController.MLdescription)
 router.get('/contact' , FrontController.contact)
 router.get('/topicListing' , FrontController.topicListing)
 router.get('/messaging' , FrontController.messaging)
@@ -22,10 +24,10 @@ router.post('/forgotPassword' , FrontController.forgetPasswordVerify)
 router.get('/reset-password',FrontController.resetPassword)
 router.post('/reset_Password1',FrontController.reset_Password1)
 
-router.get('/profile',FrontController.profile) //checkuserAuth removed
-router.post('/updateProfile',FrontController.updateProfile) //checkuserAuth removed
-router.post('/updateImage',FrontController.updateImage) //checkuserAuth removed
-router.post('/changePassword',FrontController.changePassword) //checkuserAuth removed
+router.get('/profile',checkUserAuth,FrontController.profile)
+router.post('/updateProfile',checkUserAuth,FrontController.updateProfile)
+router.post('/updateImage',checkUserAuth,FrontController.updateImage)
+router.post('/changePassword',checkUserAuth,FrontController.changePassword)
 
 router.post('/contactUs',ContactController.contactUs)
 // router.post('/contactUs/:id',checkUserAuth ,ContactController.contactUs)
