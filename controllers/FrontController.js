@@ -17,6 +17,7 @@ cloudinary.config({
 class FrontController {
     static home = async (req, res) => {
         try {
+            console.log('drift.api.showWelcomeMessage()')
             res.render('home')
         }catch(err){
             console.log(err);
