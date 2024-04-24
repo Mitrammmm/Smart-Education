@@ -6,7 +6,7 @@ const checkUserAuth = async (req,res,next) => {
     const{token}=req.cookies
     // console.log(token)
     if(!token){
-        req.flash('error', 'Unauthorised user please login')
+        req.flash('error', 'Please login')
         res.redirect('/')
     }else{
         const verifyLogin = jwt.verify(token,'guptchabi@123456')

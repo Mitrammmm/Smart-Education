@@ -46,6 +46,17 @@
               <!-- Heading (Login) -->
               <h1 class="mb-5 text-center">Login</h1>
              
+              <% if(message.length > 0){ %>
+                <div class="alert alert-success">
+                    <!-- To Print -->
+                    <%= message %>
+                </div>
+            <% } %>
+            <% if(msg.length > 0){ %>
+                <div class="alert alert-danger">
+                    <%= msg %>
+                </div>
+            <% } %>
 
               <!-- Email -->
               <div class="row mb-3">
