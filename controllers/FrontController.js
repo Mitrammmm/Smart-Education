@@ -324,35 +324,68 @@ class FrontController {
             console.log(err);
         }
     }
-    static updateImage = async (req, res) => {
-        try{
-            const { id } = req.userData
-            if (req.files) {
-                const user = await UserModel.findById(id)
-                const imageID = user.image.public_id
-                // console.log(imageID)
 
-                //deleting image from Cloudinary
-                await cloudinary.uploader.destroy(imageID)
-                //new image update
-                const imagefile = req.files.image
-                const imageupload = await cloudinary.uploader.upload(imagefile.tempFilePath, {
-                    folder: 'collabLab'
-                })
-                var data = {
-                    image: {
-                        public_id: imageupload.public_id,
-                        url: imageupload.secure_url
-                    }
+    // static updateImage = async (req, res) => {
+    //     try{
+    //         const { id } = req.userData
+    //         if (req.files) {
+    //             const user = await UserModel.findById(id)
+    //             const imageID = user.image.public_id
+    //             // console.log(imageID)
+
+    //             //deleting image from Cloudinary
+    //             await cloudinary.uploader.destroy(imageID)
+    //             //new image update
+    //             const imagefile = req.files.image
+    //             const imageupload = await cloudinary.uploader.upload(imagefile.tempFilePath, {
+    //                 folder: 'collabLab'
+    //             })
+    //             var data = {
+    //                 image: {
+    //                     public_id: imageupload.public_id,
+    //                     url: imageupload.secure_url
+    //                 }
+    //             }
+    //         }
+    //         await UserModel.findByIdAndUpdate(id, data)
+    //         req.flash('success', "Profile Updated successfully")
+    //         res.redirect('/profile')
+    //     }catch(err){
+    //         console.log(err);
+    //     }
+    // }
+    static updateImage = async (req, res) => {
+        try {
+            const { id } = req.userData;
+            if (req.files) {
+                const user = await UserModel.findById(id);
+                if (user.image && user.image.public_id) {
+                    await cloudinary.uploader.destroy(user.image.public_id);
                 }
+                const imageFile = req.files.image;
+                const imageUpload = await cloudinary.uploader.upload(imageFile.tempFilePath, {
+                    folder: 'collabLab'
+                });
+                const data = {
+                    image: {
+                        public_id: imageUpload.public_id,
+                        url: imageUpload.secure_url
+                    }
+                };
+                await UserModel.findByIdAndUpdate(id, data);
+                req.flash('success', "Profile image updated successfully");
+            } else {
+                req.flash('error', "No image uploaded");
             }
-            await UserModel.findByIdAndUpdate(id, data)
-            req.flash('success', "Profile Updated successfully")
-            res.redirect('/profile')
-        }catch(err){
-            console.log(err);
+        } catch(err) {
+            console.error(err);
+            req.flash('error', "An error occurred while updating profile image");
         }
+        res.redirect('/profile');
     }
+    
+
+
     static logOut = async (req, res) => {
         try{
             res.clearCookie('token');
