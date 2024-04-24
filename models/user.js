@@ -28,13 +28,13 @@ const UserSchema = new mongoose.Schema(
                 required: true,
             }
         },
-        token: {
-            type: String,
-        },
-        isVerified: {
-            type: Number,
-            default: 0
-        }
+        // token: {
+        //     type: String,
+        // },
+        // isVerified: {
+        //     type: Number,
+        //     default: 0
+        // }
     },
     { timestamps: true }
 );

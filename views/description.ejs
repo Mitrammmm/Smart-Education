@@ -22,7 +22,8 @@
 
     <link href="/css/bootstrap-icons.css" rel="stylesheet">
 
-    <link href="/css/templatemo-topic-listing.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- <link href="/css/templatemo-topic-listing.css" rel="stylesheet"> -->
 
     <style>
         /* Interview Section */
@@ -92,11 +93,13 @@
 
     <main>
 
+        <!-- NAVNAR -->
         <nav class="navbar navbar-expand-lg">
             <div class="container">
+                <!-- logoname/icon/link to it -->
                 <a class="navbar-brand" href="/">
-                    <i class="bi-back"></i>
-                    <span>Topic</span>
+                    <!-- <i class="bi-back"></i> -->
+                    <span>CollabLab</span>
                 </a>
 
                 <div class="d-lg-none ms-auto me-4">
@@ -131,8 +134,8 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
 
                             <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
                                 <li><a class="dropdown-item" href="/topicListing">Topics Listing</a></li>
@@ -140,6 +143,11 @@
                                 <li><a class="dropdown-item" href="/contact">Contact Form</a></li>
                             </ul>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="/messaging">Live Chat</a>
+                        </li>
+
                     </ul>
 
                     <div class="d-none d-lg-block">
@@ -157,7 +165,6 @@
                 </div>
             </div>
         </nav>
-
         <!-- must not remove -->
         <header class="site-header d-flex flex-column justify-content-center align-items-center">
             <div class="container">
@@ -315,90 +322,105 @@
             </div>
         </section>
 
+        <center><button type="button" class="btn btn-primary text-light" data-bs-toggle="modal"
+            data-bs-target="#resource">Add a Resource</button></center>
 
-        <!-- NOTES & project download section -->
         <section class="downloads-section section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <h4 class="mb-4">Notes Download</h4>
-                        <!-- notes -->
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <img src="images/pdf.jpg" style="height: 120px; width: 120px;"
-                                            class="card-img-right" alt="Logo">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <h5 class="card-title">MERN STACK</h5>
-                                        <p class="card-text">By Mitra 2nd year CSE student</p>
-                                        <a href="https://drive.google.com/file/d/1ifFKfZ-XhaqA_caxQ2RV3MIubk2m1kq1/view?usp=sharing"
-                                            class="btn btn-primary" target="_blank">Download</a>
-                                    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-12">
+                <h4 class="mb-4">Notes Download</h4>
+                <!-- notes -->
+                <% r.forEach(resource => { %>
+                <% if (resource.category == 'notes') {%>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="images/pdf.jpg" style="height: 120px; width: 120px;"
+                                        class="card-img-right" alt="Logo">
                                 </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <img src="images/pdf.jpg" style="height: 120px; width: 120px;"
-                                            class="card-img-right" alt="Logo">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <h5 class="card-title">React Notes</h5>
-                                        <p class="card-text">By Mitra 2nd year CSE student</p>
-                                        <a href="https://drive.google.com/file/d/1ifFKfZ-XhaqA_caxQ2RV3MIubk2m1kq1/view?usp=sharing"
-                                            class="btn btn-primary" target="_blank">Download</a>
-                                    </div>
+                                <div class="col-md-8">
+                                    <h5 class="card-title"><%= resource.title %></h5>
+                                    <p class="card-text"><%= resource.description %></p>
+                                    <a href="<%= resource.link %>" class="btn btn-primary" target="_blank">Download</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-12">
-                        <h4 class="mb-4">Projects Download</h4>
-                        <!-- Projects -->
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <img src="images/github.jpg" style="height: 120px; width: 120px;"
-                                            class="card-img-right" alt="Logo">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <h5 class="card-title">JAVASCRIPT Challenge</h5>
-                                        <p class="card-text">By Mitra 2nd year CSE student</p>
-                                        <a href="https://github.com/Mitrammmm/JavaScript-Challenge"
-                                            class="btn btn-primary" target="_blank">GITHUB</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Projects -->
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <img src="images/github.jpg" style="height: 120px; width: 120px;"
-                                            class="card-img-right" alt="Logo">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <h5 class="card-title">ADMISSION PORTAL</h5>
-                                        <p class="card-text">By Mitra 2nd year CSE student</p>
-                                        <a href="https://github.com/Mitrammmm/Kiko-Arts-School"
-                                            class="btn btn-primary" target="_blank">GITHUB</a>
-                                        <a href="" class="btn btn-success" target="_blank">Live</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <% }%>
+                <% }); %>
             </div>
-        </section>
+            <div class="col-lg-6 col-md-6 col-12">
+                <h4 class="mb-4">View Projects</h4>
+                <!-- Projects -->
+                <% r.forEach(resource => { %>
+                <% if(resource.category == 'project') { %>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="images/github.jpg" style="height: 120px; width: 120px;"
+                                        class="card-img-right" alt="Logo">
+                                </div>
+                                <div class="col-md-8">
+                                    <h5 class="card-title"><%= resource.title %></h5>
+                                    <p class="card-text"><%= resource.description %></p>
+                                    <a href="<%= resource.link %>" class="btn btn-primary" target="_blank">GITHUB</a>
+                                    <!-- <% if (resource.liveLink) { %>
+                                    <a href="<%= resource.liveLink %>" class="btn btn-success" target="_blank">Live</a>
+                                    <% } %> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</section>
 
-    </main>
+</main>
 
-    <%-include('./footer.ejs')%>
+<!--Resource Modal -->
+<div class="modal fade" id="resource" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Resource Upload
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="insertResource" method="post">
+                    <div class="mb-3">
+                        <label for="">Title</label>
+                        <input type="text" name="title" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Description</label>
+                        <input type="text" name="description" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Link</label>
+                        <input type="text" name="link" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Category :</label>
+                        <input type="radio" name="category" value="notes" />Notes
+                        <input type="radio" name="category" value="project" />Project
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Resource Modal End-->
+
+<%-include('./footer.ejs')%>

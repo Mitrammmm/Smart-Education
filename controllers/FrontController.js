@@ -1,4 +1,6 @@
 const UserModel = require('../models/user');
+const ResourceModel = require('../models/resource');
+const ChatModel = require('../models/doubt')
 // To Secure Password
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -36,7 +38,8 @@ class FrontController {
     }
     static description = async (req, res) => {
         try {
-            res.render('description')
+            const resource = await ResourceModel.find();
+            res.render('description', {r: resource})
         }catch(err){
             console.log(err);
         }
@@ -50,7 +53,8 @@ class FrontController {
     }
     static messaging = async (req, res) => {
         try {
-            res.render('messaging')
+            const doubts = await ChatModel.find();
+            res.render('messaging', { d:doubts })
         }catch(err){
             console.log(err);
         }

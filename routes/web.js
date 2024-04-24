@@ -3,6 +3,8 @@ const router = express.Router();
 const checkUserAuth = require('../middleware/auth');
 const FrontController = require('../controllers/FrontController');
 const ContactController = require('../controllers/ContactController');
+const ResourceController = require('../controllers/ResourceController');
+const ChatController = require('../controllers/ChatController');
 
 router.get('/' , FrontController.home)
 router.get('/login' , FrontController.login)
@@ -25,5 +27,9 @@ router.post('/changePassword',checkUserAuth ,FrontController.changePassword)
 
 router.post('/contactUs',ContactController.contactUs)
 // router.post('/contactUs/:id',checkUserAuth ,ContactController.contactUs)
+
+router.post('/insertResource',ResourceController.insertResource)
+
+router.post('/addDoubt',ChatController.addDoubt)
 
 module.exports = router;
