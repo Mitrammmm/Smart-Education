@@ -17,7 +17,7 @@ cloudinary.config({
 class FrontController {
     static home = async (req, res) => {
         try {
-            res.render('home')
+            res.render('home',{message:req.flash('success'),msg:req.flash('error')})
         }catch(err){
             console.log(err);
         }
