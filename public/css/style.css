@@ -248,7 +248,7 @@
     SITE HEADER              
   -----------------------------------------*/
   .site-header {
-    background-image: linear-gradient(15deg, #000000 0%, #001fb5 100%);
+    background-image:linear-gradient(15deg, #000000 0%, #001fb5 100%);
     padding-top: 150px;
     padding-bottom: 80px;
   }

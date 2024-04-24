@@ -114,9 +114,9 @@
       
         <h4 class="text-style">Write your message/doubts here:</h4>
         <form action="/addDoubt" method="post" enctype="multipart/form-data">
-          <input type="text" name="title" placeholder="Title" required>
-          <textarea name="description" placeholder="Type your message here..." class="message-box" required></textarea>
-          <input type="file" name="image" accept="image/*">
+          <input type="text" name="title" placeholder="Title" required class="mt-5">
+          <textarea name="description" placeholder="Type your message here..." class="message-box mt-3" required></textarea>
+          <input type="file" name="image" accept="image/*" class="text-warning">
           <input type="text" name="author" placeholder="Author's Name" required>
           <button type="submit" class="send-button">Send</button>
         </form>
