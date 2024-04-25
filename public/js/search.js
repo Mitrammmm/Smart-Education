@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form');
 
     // Event listener for form submission
-    form.addEventListener('submit', function(event) {
+    form.addEventListener('qwert', function(event) {
         event.preventDefault(); // Prevent the default form submission behavior
 
         const keyword = keywordInput.value.trim();

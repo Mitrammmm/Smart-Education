@@ -43,7 +43,6 @@
     font-family: var(--body-font-family); 
   }
   
-  
   /*---------------------------------------
     TYPOGRAPHY               
   -----------------------------------------*/
@@ -544,7 +543,15 @@
     color: var(--white-color);
     max-width: 150px;
   }
+  /* .hero-section button[type="qwert"] {
+    background-color: var(--primary-color);
+    border: 0;
+    border-radius: var(--border-radius-large) !important;
+    color: var(--white-color);
+    max-width: 150px;
+  } */
   
+
   .text-style{
     color: yellowgreen;
     font-family: sans-serif;
