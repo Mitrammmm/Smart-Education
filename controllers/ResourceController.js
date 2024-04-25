@@ -12,12 +12,13 @@ class ResourceController {
         try{
             // console.log(req.body)
             // const {id} = req.userData
-            const {title,description,link,category} = req.body
+            const {title,description,link,category,topic} = req.body
             const result = new ResourceModel({
                 title: title,
                 description: description,
                 link: link,
                 category: category,
+                topic:topic,
             })
             await result.save();
             res.redirect('/description')

@@ -427,7 +427,7 @@
                         <h4 class="mb-4">Notes Download</h4>
                         <!-- notes -->
                         <% r.forEach(resource=> { %>
-                            <% if (resource.category=='notes' ) {%>
+                            <% if (resource.category=='notes' && resource.topic=='webdesign' ) {%>
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row">
@@ -455,7 +455,7 @@
                         <h4 class="mb-4">View Projects</h4>
                         <!-- Projects -->
                         <% r.forEach(resource=> { %>
-                            <% if(resource.category=='project' ) { %>
+                            <% if (resource.category=='project' && resource.topic=='webdesign' ) {%>
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row">
@@ -526,7 +526,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="insertResource" method="post">
+                    <form action="/insertResource" method="post">
                         <div class="mb-3">
                             <label for="">Title</label>
                             <input type="text" name="title" class="form-control" />
@@ -543,6 +543,13 @@
                             <label for="">Category :</label>
                             <input type="radio" name="category" value="notes" />Notes
                             <input type="radio" name="category" value="project" />Project
+                        </div>
+                        <div class="mb-3">
+                            <label for="">Topic :</label>
+                            <input type="radio" name="topic" value="webdesign" />Web Design
+                            <input type="radio" name="topic" value="dsa" />DSA
+                            <input type="radio" name="topic" value="machinelearning" />Machine Learning
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
