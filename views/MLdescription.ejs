@@ -239,7 +239,7 @@
                         <h4 class="mb-4">Notes Download</h4>
                         <!-- notes -->
                         <% r.forEach(resource=> { %>
-                            <% if (resource.category=='notes' ) {%>
+                            <% if (resource.category=='notes' && resource.topic=='machinelearning') {%>
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row">
@@ -267,7 +267,7 @@
                         <h4 class="mb-4">View Projects</h4>
                         <!-- Projects -->
                         <% r.forEach(resource=> { %>
-                            <% if(resource.category=='project' ) { %>
+                            <% if(resource.category=='project' && resource.topic=='machinelearning') { %>
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row">
@@ -320,8 +320,52 @@
         </section>
     </main>
 
-    <!-- Resource Modal -->
-    <!-- Your resource modal code here -->
+    <!--Resource Modal -->
+    <div class="modal fade" id="resource" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Resource Upload
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="insertResource" method="post">
+                        <div class="mb-3">
+                            <label for="">Title</label>
+                            <input type="text" name="title" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="">Description</label>
+                            <input type="text" name="description" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="">Link</label>
+                            <input type="text" name="link" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="">Category :</label>
+                            <input type="radio" name="category" value="notes" />Notes
+                            <input type="radio" name="category" value="project" />Project
+                        </div>
+                        <div class="mb-3">
+                            <label for="">Topic :</label>
+                            <input type="radio" name="topic" value="webdesign" />Web Design
+                            <input type="radio" name="topic" value="dsa" />DSA
+                            <input type="radio" name="topic" value="machinelearning" />Machine Learning
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Resource Modal End-->
 
 
     <%-include('./footer.ejs')%>

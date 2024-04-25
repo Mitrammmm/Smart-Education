@@ -16,6 +16,10 @@ const ResourceSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
+  },
+  topic: {
+    type: String,
+    required: true,
   }
 },{timestamps: true});
 
