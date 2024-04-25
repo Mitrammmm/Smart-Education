@@ -285,7 +285,7 @@ class FrontController {
           html:
             "<p>Hii " +
             name +
-            ',Please click here to <a href="https://smart-education-8qkq.onrender.com/reset-password?token=' +
+            ',Please click here to <a href="http://localhost:3000/reset-password?token=' +
             token +
             '">Reset</a> your Password.',
         });
@@ -349,36 +349,6 @@ class FrontController {
             console.log(err);
         }
     }
-
-    // static updateImage = async (req, res) => {
-    //     try{
-    //         const { id } = req.userData
-    //         if (req.files) {
-    //             const user = await UserModel.findById(id)
-    //             const imageID = user.image.public_id
-    //             // console.log(imageID)
-
-    //             //deleting image from Cloudinary
-    //             await cloudinary.uploader.destroy(imageID)
-    //             //new image update
-    //             const imagefile = req.files.image
-    //             const imageupload = await cloudinary.uploader.upload(imagefile.tempFilePath, {
-    //                 folder: 'collabLab'
-    //             })
-    //             var data = {
-    //                 image: {
-    //                     public_id: imageupload.public_id,
-    //                     url: imageupload.secure_url
-    //                 }
-    //             }
-    //         }
-    //         await UserModel.findByIdAndUpdate(id, data)
-    //         req.flash('success', "Profile Updated successfully")
-    //         res.redirect('/profile')
-    //     }catch(err){
-    //         console.log(err);
-    //     }
-    // }
     static updateImage = async (req, res) => {
         try {
             const { id } = req.userData;
@@ -408,9 +378,6 @@ class FrontController {
         }
         res.redirect('/profile');
     }
-    
-
-
     static logOut = async (req, res) => {
         try{
             res.clearCookie('token');
