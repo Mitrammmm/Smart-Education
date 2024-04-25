@@ -5,10 +5,13 @@ const FrontController = require('../controllers/FrontController');
 const ContactController = require('../controllers/ContactController');
 const ResourceController = require('../controllers/ResourceController');
 const ChatController = require('../controllers/ChatController');
+const AdminController = require('../controllers/AdminController');
+
 
 router.get('/' , FrontController.home)
 router.get('/login' , FrontController.login)
 router.get('/register' , FrontController.register)
+router.get('/admin/dashboard' , AdminController.dashboard);
 
 router.get('/description' , FrontController.description)
 router.get('/DSAdescription' , FrontController.DSAdescription)
@@ -19,7 +22,7 @@ router.get('/machine-learning' , FrontController.MLdescription);
 
 router.get('/contact' , FrontController.contact)
 router.get('/topicListing' , FrontController.topicListing)
-router.get('/messaging' , FrontController.messaging)
+router.get('/messaging' ,checkUserAuth, FrontController.messaging)
 
 router.post('/userinsert', FrontController.userinsert)
 router.post('/verifyLogin', FrontController.verifyLogin)
